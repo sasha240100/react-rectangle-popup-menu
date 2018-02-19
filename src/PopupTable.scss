@@ -1,0 +1,23 @@
+.PopupTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: calc(200px - 10px);
+  flex-flow: row wrap;
+  // align-content: flex-start;
+}
+
+.item {
+  padding: 5px;
+  border-radius: 2px;
+
+  &:hover {
+    background: rgba(0,0,0,0.1);
+  }
+}
+
+.placeholder  {
+  padding: 5px;
+  border-radius: 2px;
+  visibility: hidden;
+}

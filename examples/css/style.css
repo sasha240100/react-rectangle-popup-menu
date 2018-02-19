@@ -1,0 +1,9 @@
+body {
+  background: #F0CA4D;
+}
+
+.centered {
+  position: absolute;
+  left: calc(50% - 15px);
+  top: 30%;
+}

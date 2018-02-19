@@ -1,0 +1,62 @@
+{
+  "name": "react-rectangle-popup-menu",
+  "version": "0.0.1",
+  "description": "React rectangle popup menu component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c rollup.config.babel.js",
+    "watch": "rollup -c rollup.config.babel.js -w",
+    "examples:build": "cd \"./examples\" && \"./node_modules/.bin/webpack\"",
+    "examples:watch": "cd \"./examples\" && \"./node_modules/.bin/webpack-dev-server\"",
+    "start": "npm run watch & npm run examples:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasha240100/react-rectangle-popup-menu.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "library",
+    "popup",
+    "menu"
+  ],
+  "author": "Alexander Buzin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sasha240100/react-rectangle-popup-menu/issues"
+  },
+  "homepage": "https://github.com/sasha240100/react-rectangle-popup-menu#readme",
+  "dependencies": {
+    "clone": "^2.1.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dimensions": "^1.3.1",
+    "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.28.9",
+    "node-sass": "^4.7.2",
+    "postcss-scss": "^1.0.3",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-postcss": "^1.2.8",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-watch": "^4.3.1",
+    "style-loader": "^0.20.2",
+    "url-loader": "^0.6.2"
+  }
+}
