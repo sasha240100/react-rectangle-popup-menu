@@ -9,7 +9,7 @@ import style from './PopupMenu.scss';
 export class PopupMenu extends Component {
   static defaultProps = {
     width: 200,
-    height: 200
+    height: 'auto'
   };
 
   state = {
@@ -45,25 +45,34 @@ export class PopupMenu extends Component {
     return {
       popover: {
         width: `calc(${props.width}px - 10px)`,
-        height: `calc(${props.height}px - 10px)`,
-        left: `calc(${-props.width / 2}px + 50%)`
+        height: props.height === 'auto' ? 'auto' : `calc(${props.height}px - 10px)`,
+        left: `calc(${-props.width / 2}px + 50%)`,
+        ...(props.direction === 'left' || props.direction === 'right' ? {
+          top: `calc(${-props.height / 2}px + 50%)`
+        } : {})
       }
     };
   }
 
   render() {
     const {hovered, displayable} = this.state;
+    const {direction} = this.props;
 
     const styles = this.configureStyles(this.props);
+    console.log(style);
 
     return (
       <div
-        className={style.PopupMenu}
+        className={cx(style.PopupMenu, style[`direction-${direction}`])}
       >
         <div
           onMouseOver={this.hover}
           onMouseOut={this.unhover}
-          className={style.button}
+          className={
+            cx(style.button, {
+              active: hovered
+            })
+          }
         >
           <FontAwesome name="rocket" size="2x" />
         </div>

@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import getRenderedSize from 'react-rendered-size';
 // import Dimensions from 'react-dimensions';
 
 import style from './PopupTable.scss';
+import sizeMe from 'react-sizeme';
 
 export class PopupTable extends Component {
   constructor(props, context) {
@@ -15,22 +17,39 @@ export class PopupTable extends Component {
 
   render() {
     const {rowItems} = this.props;
-    const children = this.props.children.slice();
+    const sizes = [];
+
+    const children = this.props.children.map((component) => {
+      sizes.push(getRenderedSize(component));
+      return React.cloneElement(component);
+    });
 
     const items = children.length % rowItems;
+    const width = this.context.popupWidth || 200;
 
-    while(children.length % rowItems !== 0) {
+    if (children.length % rowItems !== 0) {
+      const contentSize = sizes
+        .slice(-items)
+        .reduce((size, {width}) => size + width + 10, 0);
+
+      const margin = (width - rowItems * (contentSize / items)) / (rowItems);
+
       children.push(
-        React.cloneElement(children[children.length - 1])
+        <div
+          style={{
+            width: (width - contentSize) - margin * rowItems
+          }}
+        ></div>
       );
     }
 
-    const width = this.context.popupWidth || 200;
-
     return (
-      <div className={style.PopupTable} style={{width: `calc(${width}px - 10px)`}}>
+      <div
+        className={style.PopupTable}
+        style={{width: `calc(${width}px - 10px)`}}
+      >
         {children.map((child, i) => (
-          <div className={i < children.length - items ? style.item : style.placeholder}>
+          <div className={i == children.length - 1 && items > 0 ? style.placeholder : style.item}>
             {child}
           </div>
         ))}

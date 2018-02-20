@@ -9,7 +9,7 @@
   height: 30px;
   transition: background 0.25s ease-in-out;
 
-  &:hover {
+  &:hover, &:global(.active) {
     background: rgba(0,0,0,0.1);
   }
 }
@@ -43,5 +43,48 @@
     left: calc(50% - 10px);
     border: 10px solid white;
     border-color: transparent transparent white transparent;
+  }
+}
+
+.direction-top {
+  .popover {
+    top: auto;
+    bottom: 60px;
+
+    &:before {
+      top: auto;
+      bottom: -20px;
+      border-color: white transparent transparent transparent;
+    }
+  }
+}
+
+.direction-left {
+  .popover {
+    top: -100px;
+    left: auto !important;
+    right: 60px;
+
+    &:before {
+      left: auto;
+      right: -20px;
+      top: calc(50% - 10px);
+      border-color: transparent transparent transparent white;
+    }
+  }
+}
+
+.direction-right {
+  .popover {
+    top: -100px;
+    right: auto !important;
+    left: 60px !important;
+
+    &:before {
+      right: auto;
+      left: -20px;
+      top: calc(50% - 10px);
+      border-color: transparent white transparent transparent;
+    }
   }
 }

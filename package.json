@@ -9,7 +9,7 @@
     "watch": "rollup -c rollup.config.babel.js -w",
     "examples:build": "cd \"./examples\" && \"./node_modules/.bin/webpack\"",
     "examples:watch": "cd \"./examples\" && \"./node_modules/.bin/webpack-dev-server\"",
-    "start": "npm run watch & npm run examples:watch"
+    "start": "(npm run watch & npm run examples:watch)"
   },
   "repository": {
     "type": "git",
@@ -32,9 +32,9 @@
     "clone": "^2.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dimensions": "^1.3.1",
     "react-dom": "^16.2.0",
-    "react-fontawesome": "^1.6.1"
+    "react-fontawesome": "^1.6.1",
+    "react-rendered-size": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -48,6 +48,8 @@
     "css-loader": "^0.28.9",
     "node-sass": "^4.7.2",
     "postcss-scss": "^1.0.3",
+    "react-dimensions": "^1.3.1",
+    "react-sizeme": "^2.3.6",
     "rollup": "^0.56.2",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.3.0",
