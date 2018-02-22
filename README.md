@@ -5,7 +5,7 @@ React rectangle popup menu library
 
 ### `<PopupMenu />`
 
-```jsx
+```js
 class Popup {
   render() {
     <PopupMenu>
@@ -23,10 +23,11 @@ class Popup {
 	height: ?(number | 'auto') = 'auto', // If auto it's minimized to rows size
 	direction: ?('top' | 'bottom' | 'left' | 'right') = 'top'
 }
+```
 
 ### `<PopupTable />`
 
-```jsx
+```js
 import FontAwesome from 'react-fontawesome';
 
 const button = (<FontAwesome name="rocket" size="2x" />);
@@ -64,7 +65,7 @@ class Popup {
 ```
 
 ### `<PopupText />`
-```jsx
+```js
 class Popup {
   render() {
     <PopupMenu width={190} direction="bottom" button={button}>
