@@ -1,7 +1,7 @@
 # react-rectangle-popup-menu
 ![](https://img.shields.io/travis/sasha240100/react-rectangle-popup-menu.svg)
 
-React rectangle popup menu library
+React rectangle popup menu library. [Demo](https://sasha240100.github.io/react-rectangle-popup-menu/examples/)
 
 ![](./assets/record.gif)
 
