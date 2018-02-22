@@ -9,6 +9,10 @@ export class PopupTable extends Component {
     super(props, context);
   }
 
+  static defaultProps = {
+    rowItems: 1
+  };
+
   static contextTypes = {
     popupWidth: PropTypes.number
   };

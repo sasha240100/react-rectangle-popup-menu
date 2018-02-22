@@ -9,9 +9,9 @@ const button = (<FontAwesome name="text-height" size="2x" />);
 
 const Application = () => (
   <div className="centered">
-  <PopupMenu width={190} direction="bottom" button={button}>
-    <PopupText>Some text</PopupText>
-  </PopupMenu>
+    <PopupMenu width={190} direction="bottom" button={button}>
+      <PopupText>Some text</PopupText>
+    </PopupMenu>
   </div>
 );
 

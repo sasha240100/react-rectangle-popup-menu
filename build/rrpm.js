@@ -1623,6 +1623,9 @@ var PopupTable = function (_Component) {
   }]);
   return PopupTable;
 }(React.Component);
+PopupTable.defaultProps = {
+  rowItems: 1
+};
 PopupTable.contextTypes = {
   popupWidth: propTypes.number
 };
