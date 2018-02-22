@@ -5,11 +5,6 @@
 }(this, (function (exports,React,reactDom) { 'use strict';
 
 var React__default = 'default' in React ? React['default'] : React;
-reactDom = reactDom && reactDom.hasOwnProperty('default') ? reactDom['default'] : reactDom;
-
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -1357,237 +1352,72 @@ PopupMenu.childContextTypes = {
   popupWidth: propTypes.number
 };
 
-var constants = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/**
- * @constant {string} DEFAULT_CONTAINER_ELEMENT
- * @default
- */
-var DEFAULT_CONTAINER_ELEMENT = exports.DEFAULT_CONTAINER_ELEMENT = 'div';
-
-/**
- * @constant {string} RENDER_CONTAINER_ID
- * @default
- */
-var RENDER_CONTAINER_ID = exports.RENDER_CONTAINER_ID = '__REACT_RENDERED_SIZE_CONTAINER__';
-});
-
-unwrapExports(constants);
-var constants_1 = constants.DEFAULT_CONTAINER_ELEMENT;
-var constants_2 = constants.RENDER_CONTAINER_ID;
-
-var element = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getRenderedElement = exports.getNewContainer = exports.getMainContainer = undefined;
-
-
-
-
-
-/**
- * @function getMainContainer
- *
- * @description
- * get the main container that future containers will be rendered into
- *
- * @param {Object} doc document to render into
- * @returns {HTMLElement} the main container that all future containers will render into
- */
-// external dependencies
-var getMainContainer = exports.getMainContainer = function getMainContainer(doc) {
-  var container = doc.createElement('div');
-
-  container.id = constants.RENDER_CONTAINER_ID;
-
-  container.style.left = '-10000px';
-  container.style.position = 'absolute';
-  container.style.top = '-10000px';
-  container.style.visibility = 'hidden';
-
-  return container;
-};
-
-/**
- * @function getNewContainer
- *
- * @description
- * get a new container that has the necessary styles for rendering
- *
- * @param {Object} doc document to create element with
- * @param {string} type the type of element to use for the container
- * @param {HTMLElement} passedContainer the passed container to used, instead of creating one
- * @param {number|string} width the width to assign to the container
- * @returns {HTMLElement} the new container element
- */
-
-
-// constants
-var getNewContainer = exports.getNewContainer = function getNewContainer(doc, type, passedContainer, width) {
-  if (passedContainer) {
-    return passedContainer;
-  }
-
-  var container = doc.createElement(type);
-
-  container.style.width = typeof width === 'number' ? width + 'px' : width;
-
-  return container;
-};
-
-/**
- * @function getRenderedElement
- *
- * @description
- * get the element rendered into the container
- *
- * @param {HTMLElement} container the container to render into
- * @param {ReactElement} element the element to render into the container
- * @returns {HTMLElement} the ReactElement rendered as a DOM element
- */
-var getRenderedElement = exports.getRenderedElement = function getRenderedElement(container, element) {
-  var renderResult = void 0;
-
-  (0, reactDom.render)(element, container, function () {
-    renderResult = container.firstChild;
-  });
-  /* eslint-enable */
-
-  return (0, reactDom.findDOMNode)(renderResult);
-};
-});
-
-unwrapExports(element);
-var element_1 = element.getRenderedElement;
-var element_2 = element.getNewContainer;
-var element_3 = element.getMainContainer;
-
-var lib = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getRenderedWidth = exports.getRenderedHeight = exports.getRenderedSize = undefined;
-
-
-
-
-
-// constants
-var mainContainer = void 0;
-
-/**
- * @function getRenderedSize
- *
- * @description
- * get the rendered height and width of the ReactElement passed based on a given containerWidth
- *
- * @param {ReactElement} element the element to get the rendered size of
- * @param {number} containerWidth the width in pixels of the container to render in
- * @param {Object} [containerOptions={}] additional options for generating the container
- * @returns {{height: number, width: number}} the size of the rendered ReactElement
- */
-
-
-// element
-var getRenderedSize = exports.getRenderedSize = function getRenderedSize(element$$1, containerWidth) {
-  var containerOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-  var container = containerOptions.container,
-      _containerOptions$doc = containerOptions.doc,
-      doc = _containerOptions$doc === undefined ? document : _containerOptions$doc,
-      _containerOptions$typ = containerOptions.type,
-      type = _containerOptions$typ === undefined ? constants.DEFAULT_CONTAINER_ELEMENT : _containerOptions$typ;
-
-
-  if (!mainContainer) {
-    mainContainer = (0, element.getMainContainer)(doc);
-
-    doc.body.appendChild(mainContainer);
-  }
-
-  var renderContainer = (0, element.getNewContainer)(doc, type, container, containerWidth || doc.documentElement.clientWidth);
-
-  mainContainer.appendChild(renderContainer);
-
-  var renderedElement = (0, element.getRenderedElement)(renderContainer, element$$1);
-  var size = {
-    height: renderedElement.offsetHeight,
-    width: renderedElement.offsetWidth
-  };
-
-  mainContainer.removeChild(renderContainer);
-
-  return size;
-};
-
-/**
- * @function getRenderedHeight
- *
- * @description
- * shortcut method to get only the height property from getRenderedSize
- *
- * @param {...Array<*>} args the arguments to pass to getRenderedSize
- * @returns {number} the rendered height
- */
-var getRenderedHeight = exports.getRenderedHeight = function getRenderedHeight() {
-  var size = getRenderedSize.apply(undefined, arguments);
-
-  return size.height;
-};
-
-/**
- * @function getRenderedWidth
- *
- * @description
- * shortcut method to get only the width property from getRenderedSize
- *
- * @param {...Array<*>} args the arguments to pass to getRenderedSize
- * @returns {number} the rendered width
- */
-var getRenderedWidth = exports.getRenderedWidth = function getRenderedWidth() {
-  var size = getRenderedSize.apply(undefined, arguments);
-
-  return size.width;
-};
-
-exports.default = getRenderedSize;
-});
-
-var getRenderedSize = unwrapExports(lib);
-var lib_1 = lib.getRenderedWidth;
-var lib_2 = lib.getRenderedHeight;
-var lib_3 = lib.getRenderedSize;
-
-var css$1 = ".PopupTable_PopupTable__3fGcX {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: calc(200px - 10px);\n  flex-flow: row wrap; }\n\n.PopupTable_item__1j75h {\n  padding: 5px;\n  border-radius: 2px;\n  transition: background 0.15s ease-in-out; }\n  .PopupTable_item__1j75h:hover {\n    background: rgba(0, 0, 0, 0.1); }\n\n.PopupTable_placeholder__CKltF {\n  height: 10px;\n  display: block;\n  border-radius: 2px;\n  visibility: hidden; }\n";
+var css$1 = ".PopupTable_PopupTable__3fGcX {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: calc(200px - 10px);\n  flex-flow: row wrap; }\n\n.PopupTable_item__1j75h {\n  padding: 5px;\n  border-radius: 2px;\n  transition: background 0.15s ease-in-out; }\n  .PopupTable_item__1j75h:hover {\n    background: rgba(0, 0, 0, 0.1); }\n\n.PopupTable_placeholder__CKltF {\n  padding: 0px;\n  height: 10px;\n  display: block;\n  border-radius: 2px;\n  visibility: hidden; }\n";
 var style$1 = { "PopupTable": "PopupTable_PopupTable__3fGcX", "item": "PopupTable_item__1j75h", "placeholder": "PopupTable_placeholder__CKltF" };
 styleInject(css$1);
+
+var container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.left = '-999999px';
+document.body.appendChild(container);
+
+var getSize = function getSize(element) {
+  var elementParent = document.createElement('div');
+  container.appendChild(elementParent);
+
+  return new Promise(function (resolve) {
+    reactDom.render(element, elementParent, function () {
+      resolve({
+        width: elementParent.firstChild.offsetWidth,
+        height: elementParent.firstChild.offsetHeight
+      });
+    });
+  });
+};
 
 var PopupTable = function (_Component) {
   inherits(PopupTable, _Component);
 
   function PopupTable(props, context) {
     classCallCheck(this, PopupTable);
-    return possibleConstructorReturn(this, (PopupTable.__proto__ || Object.getPrototypeOf(PopupTable)).call(this, props, context));
+
+    var _this = possibleConstructorReturn(this, (PopupTable.__proto__ || Object.getPrototypeOf(PopupTable)).call(this, props, context));
+
+    _this.sizes = [];
+    _this.wait = [];
+
+    _this.updateLayout();
+    return _this;
   }
 
   createClass(PopupTable, [{
-    key: 'render',
-    value: function render() {
-      var rowItems = this.props.rowItems;
+    key: 'updateLayout',
+    value: function updateLayout() {
+      var _this2 = this;
 
-      var sizes = [];
+      this.items = this.props.children.length % this.props.rowItems;
 
-      var children = this.props.children.map(function (component) {
-        sizes.push(getRenderedSize(component));
+      this.children = this.props.children.map(function (component) {
+        _this2.wait.push(getSize(component));
         return React__default.cloneElement(component);
       });
 
-      var items = children.length % rowItems;
+      Promise.all(this.wait).then(function (sizes) {
+        _this2.sizes = sizes;
+        _this2.forceUpdate();
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var rowItems = this.props.rowItems;
+      var children = this.children,
+          sizes = this.sizes,
+          items = this.items;
+
+
+      if (sizes.length < 1) return null;
+
       var width = this.context.popupWidth || 200;
 
       if (children.length % rowItems !== 0) {
@@ -1605,6 +1435,8 @@ var PopupTable = function (_Component) {
         }));
       }
 
+      console.log(items);
+
       return React__default.createElement(
         'div',
         {
@@ -1614,7 +1446,7 @@ var PopupTable = function (_Component) {
         children.map(function (child, i) {
           return React__default.createElement(
             'div',
-            { key: 'wrapper_' + i, className: i == children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
+            { key: i, className: i === children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
             child
           );
         })
