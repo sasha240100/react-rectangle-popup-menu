@@ -1,4 +1,5 @@
 # react-rectangle-popup-menu
+![](https://img.shields.io/travis/sasha240100/react-rectangle-popup-menu.svg)
 React rectangle popup menu library
 
 ![](./assets/record.gif)

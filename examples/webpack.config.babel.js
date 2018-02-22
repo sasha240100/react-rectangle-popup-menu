@@ -11,7 +11,7 @@ export default {
 
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './build/')
+    path: path.resolve(__dirname, './bundle/')
   },
 
   module: {
@@ -51,7 +51,7 @@ export default {
     publicPath: '/build',
     port: 8080,
     before(app, server) {
-      app.use('/library', express.static(path.resolve(__dirname, '../build/')))
+      app.use('/build', express.static(path.resolve(__dirname, '../build/')))
     }
   }
 };
