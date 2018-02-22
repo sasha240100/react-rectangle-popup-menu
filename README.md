@@ -17,7 +17,7 @@ class Popup {
 
 #### Parameters for `<PopupMenu />`
 
-```
+```js
 {
 	width: ?number = 200,
 	height: ?(number | 'auto') = 'auto', // If auto it's minimized to rows size
@@ -57,7 +57,7 @@ class Popup {
 
 #### Parameters for `<PopupTable />`
 
-```
+```js
 {
 	// Items per row (used to generate normal width of placeholder)
 	rowItems: ?number = 1
