@@ -47,7 +47,7 @@ export class PopupTable extends Component {
         style={{width: `calc(${width}px - 10px)`}}
       >
         {children.map((child, i) => (
-          <div className={i == children.length - 1 && items > 0 ? style.placeholder : style.item}>
+          <div key={'wrapper_' + i} className={i == children.length - 1 && items > 0 ? style.placeholder : style.item}>
             {child}
           </div>
         ))}

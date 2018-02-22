@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupMenu should render correctly 1`] = `
+<div
+  className="PopupMenu_PopupMenu__8TfA4"
+>
+  <div
+    className="PopupMenu_button__20m_Y"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="PopupMenu_popover__3hd_Z"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "height": "auto",
+        "left": "calc(-100px + 50%)",
+        "visibility": "hidden",
+        "width": "calc(200px - 10px)",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`PopupMenu should respond to mouse hover 1`] = `
+<div
+  className="PopupMenu_PopupMenu__8TfA4"
+>
+  <div
+    className="PopupMenu_button__20m_Y active"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="PopupMenu_popover__3hd_Z active"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "height": "auto",
+        "left": "calc(-100px + 50%)",
+        "visibility": "",
+        "width": "calc(200px - 10px)",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`PopupMenu should respond to mouse unhover 1`] = `
+<div
+  className="PopupMenu_PopupMenu__8TfA4"
+>
+  <div
+    className="PopupMenu_button__20m_Y"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="PopupMenu_popover__3hd_Z"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "height": "auto",
+        "left": "calc(-100px + 50%)",
+        "visibility": "",
+        "width": "calc(200px - 10px)",
+      }
+    }
+  />
+</div>
+`;

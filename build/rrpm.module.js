@@ -1608,7 +1608,7 @@ var PopupTable = function (_Component) {
         children.map(function (child, i) {
           return React.createElement(
             'div',
-            { className: i == children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
+            { key: 'wrapper_' + i, className: i == children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
             child
           );
         })
