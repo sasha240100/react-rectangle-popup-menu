@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import getRenderedSize from 'react-rendered-size';
-// import Dimensions from 'react-dimensions';
 
 import style from './PopupTable.scss';
-import sizeMe from 'react-sizeme';
 
 export class PopupTable extends Component {
   constructor(props, context) {

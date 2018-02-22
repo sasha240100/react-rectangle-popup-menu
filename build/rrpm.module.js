@@ -1,9 +1,3 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('react-dom')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'react-dom'], factory) :
-	(factory((global.ReactRectanglePopupMenu = {}),global.React,global.ReactDOM));
-}(this, (function (exports,React,reactDom) { 'use strict';
-
 function __$$styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -31,8 +25,8 @@ function __$$styleInject(css, ref) {
   }
 }
 
-var React__default = 'default' in React ? React['default'] : React;
-reactDom = reactDom && reactDom.hasOwnProperty('default') ? reactDom['default'] : reactDom;
+import React, { Component } from 'react';
+import reactDom from 'react-dom';
 
 function unwrapExports (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -1313,12 +1307,12 @@ var PopupMenu = function (_Component) {
 
       var styles = this.configureStyles(this.props);
 
-      return React__default.createElement(
+      return React.createElement(
         'div',
         {
           className: classnames(style.PopupMenu, style['direction-' + direction])
         },
-        React__default.createElement(
+        React.createElement(
           'div',
           {
             onMouseOver: this.hover,
@@ -1329,7 +1323,7 @@ var PopupMenu = function (_Component) {
           },
           this.props.button
         ),
-        React__default.createElement(
+        React.createElement(
           'div',
           {
             onMouseOver: this.hover,
@@ -1348,7 +1342,7 @@ var PopupMenu = function (_Component) {
     }
   }]);
   return PopupMenu;
-}(React.Component);
+}(Component);
 PopupMenu.defaultProps = {
   width: 200,
   height: 'auto'
@@ -1584,7 +1578,7 @@ var PopupTable = function (_Component) {
 
       var children = this.props.children.map(function (component) {
         sizes.push(getRenderedSize(component));
-        return React__default.cloneElement(component);
+        return React.cloneElement(component);
       });
 
       var items = children.length % rowItems;
@@ -1598,21 +1592,21 @@ var PopupTable = function (_Component) {
 
         var margin = (width - rowItems * (contentSize / items)) / rowItems;
 
-        children.push(React__default.createElement('div', {
+        children.push(React.createElement('div', {
           style: {
             width: width - contentSize - margin * rowItems
           }
         }));
       }
 
-      return React__default.createElement(
+      return React.createElement(
         'div',
         {
           className: style$1.PopupTable,
           style: { width: 'calc(' + width + 'px - 10px)' }
         },
         children.map(function (child, i) {
-          return React__default.createElement(
+          return React.createElement(
             'div',
             { className: i == children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
             child
@@ -1622,7 +1616,7 @@ var PopupTable = function (_Component) {
     }
   }]);
   return PopupTable;
-}(React.Component);
+}(Component);
 PopupTable.contextTypes = {
   popupWidth: propTypes.number
 };
@@ -1638,10 +1632,10 @@ var PopupText = function (_Component) {
   createClass(PopupText, [{
     key: 'render',
     value: function render() {
-      return React__default.createElement(
+      return React.createElement(
         'div',
         { style: { padding: '3px 7px' } },
-        React__default.createElement(
+        React.createElement(
           'span',
           null,
           this.props.children
@@ -1650,13 +1644,7 @@ var PopupText = function (_Component) {
     }
   }]);
   return PopupText;
-}(React.Component);
+}(Component);
 
-exports.PopupMenu = PopupMenu;
-exports.PopupTable = PopupTable;
-exports.PopupText = PopupText;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=rrpm.js.map
+export { PopupMenu, PopupTable, PopupText };
+//# sourceMappingURL=rrpm.module.js.map

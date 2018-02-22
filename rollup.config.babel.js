@@ -8,13 +8,26 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: './src/index.js',
+  moduleName: 'ReactRectanglePopupMenu',
+  sourcemap: true,
 
-  output: {
-    file: './build/rrpm.js',
-    format: 'umd',
-    name: 'ReactRectanglePopupMenu',
-    sourcemap: true
-  },
+  // output: {
+  //   file: './build/rrpm.js',
+  //   format: 'umd',
+  //   name: 'ReactRectanglePopupMenu',
+  //   sourcemap: true
+  // },
+
+  targets: [
+    {
+      dest: './build/rrpm.js',
+      format: 'umd'
+    },
+    {
+      dest: 'build/rrpm.module.js',
+      format: 'es'
+    }
+  ],
 
   plugins: [
     postcss({
@@ -30,9 +43,10 @@ export default {
     commonjs()
   ],
 
-  external: ['react'],
+  external: ['react', 'react-dom'],
 
   globals: {
-    'react': 'React'
+    react: 'React',
+    'react-dom': 'ReactDOM'
   }
 };

@@ -35,7 +35,9 @@ export default {
   },
 
   externals: {
-    'react-rectangle-popup-menu': 'window.ReactRectanglePopupMenu'
+    'react-rectangle-popup-menu': 'window.ReactRectanglePopupMenu',
+    react: 'window.React',
+    'react-dom': 'window.ReactDOM'
   },
 
   plugins: [

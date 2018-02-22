@@ -2,7 +2,7 @@
   "name": "react-rectangle-popup-menu",
   "version": "0.0.1",
   "description": "React rectangle popup menu component library",
-  "main": "index.js",
+  "main": "build/rrpm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.babel.js",
