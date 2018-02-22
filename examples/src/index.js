@@ -1,31 +1,33 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import FontAwesome from 'react-fontawesome';
 import {PopupMenu, PopupTable} from 'react-rectangle-popup-menu';
 
 import 'font-awesome/css/font-awesome.css';
 
+const button = (<FontAwesome name="rocket" size="2x" />);
+
 const Application = () => (
-  <div className="centered">
-    <PopupMenu width={190} direction="bottom">
-      <PopupTable rowItems={4}>
-        <FontAwesome name="google-plus-square" size="2x" />
-        <FontAwesome name="twitter-square" size="2x" />
-        <FontAwesome name="google" size="2x" />
-        <FontAwesome name="google" size="2x" />
-
-        <FontAwesome name="facebook-official" size="2x" />
-        <FontAwesome name="twitter-square" size="2x" />
-        <FontAwesome name="spotify" size="2x" />
-        <FontAwesome name="twitter-square" size="2x" />
-
-        <FontAwesome name="google-plus-square" size="2x" />
-        <FontAwesome name="google" size="2x" />
-        <FontAwesome name="twitter-square" size="2x" />
-      </PopupTable>
-    </PopupMenu>
-  </div>
+  <Fragment>
+    <div id="sidebar">
+      <ul>
+        <li><a href="#popup_table" className="link">PopupTable</a></li>
+        <li><a href="#popup_text" className="link">PopupText</a></li>
+      </ul>
+    </div>
+    <iframe src="./popup_table.html" />
+  </Fragment>
 );
+
+window.addEventListener('load', () => {
+  const iframe = document.querySelector('iframe');
+
+  for (let link of document.querySelectorAll('a.link')) {
+    link.addEventListener('click', (e) => {
+      iframe.src = e.target.href.replace('#', '') + '.html';
+    })
+  }
+})
 
 ReactDOM.render(
   <Application />,

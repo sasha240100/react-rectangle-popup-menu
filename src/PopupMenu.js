@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import FontAwesome from 'react-fontawesome';
 import clone from 'clone';
 
 import style from './PopupMenu.scss';
@@ -59,7 +58,6 @@ export class PopupMenu extends Component {
     const {direction} = this.props;
 
     const styles = this.configureStyles(this.props);
-    console.log(style);
 
     return (
       <div
@@ -74,7 +72,7 @@ export class PopupMenu extends Component {
             })
           }
         >
-          <FontAwesome name="rocket" size="2x" />
+          {this.props.button}
         </div>
         <div
           onMouseOver={this.hover}

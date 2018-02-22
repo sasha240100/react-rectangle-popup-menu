@@ -4,7 +4,9 @@ import webpack from 'webpack';
 
 export default {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    popup_table: './src/popup_table.js',
+    popup_text: './src/popup_text.js'
   },
 
   output: {

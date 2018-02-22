@@ -2,7 +2,7 @@
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
 	typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
 	(factory((global.ReactRectanglePopupMenu = {}),global.React));
-}(this, (function (exports,require$$0) { 'use strict';
+}(this, (function (exports,react) { 'use strict';
 
 function __$$styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -31,7 +31,7 @@ function __$$styleInject(css, ref) {
   }
 }
 
-var require$$0__default = 'default' in require$$0 ? require$$0['default'] : require$$0;
+var react__default = 'default' in react ? react['default'] : react;
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -935,171 +935,6 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
-var screenReaderStyles = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  position: 'absolute',
-  width: '1px',
-  height: '1px',
-  padding: '0px',
-  margin: '-1px',
-  overflow: 'hidden',
-  clip: 'rect(0px, 0px, 0px, 0px)',
-  border: '0px'
-};
-module.exports = exports['default'];
-});
-
-unwrapExports(screenReaderStyles);
-
-var lib = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-
-
-var _react2 = _interopRequireDefault(require$$0__default);
-
-
-
-var _propTypes2 = _interopRequireDefault(propTypes);
-
-
-
-var _screenReaderStyles2 = _interopRequireDefault(screenReaderStyles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/**
- * A React component for the font-awesome icon library.
- *
- * @param {String} [ariaLabel] An extra accessibility label to put on the icon
- * @param {Boolean} [border=false] Whether or not to show a border radius
- * @param {String} [className] An extra set of CSS classes to add to the component
- * @param {Object} [cssModule] Option to pass FontAwesome CSS as a module
- * @param {Boolean} [fixedWidth=false] Make buttons fixed width
- * @param {String} [flip=false] Flip the icon's orientation.
- * @param {Boolean} [inverse=false]Inverse the icon's color
- * @param {String} name Name of the icon to use
- * @param {Boolean} [pulse=false] Rotate icon with 8 steps, rather than smoothly
- * @param {Number} [rotate] The degress to rotate the icon by
- * @param {String} [size] The icon scaling size
- * @param {Boolean} [spin=false] Spin the icon
- * @param {String} [stack] Stack an icon on top of another
- * @param {String} [tag=span] The HTML tag to use as a string, eg 'i' or 'em'
- * @module FontAwesome
- * @type {ReactClass}
- */
-var FontAwesome = function (_React$Component) {
-  _inherits(FontAwesome, _React$Component);
-
-  function FontAwesome() {
-    _classCallCheck(this, FontAwesome);
-
-    var _this = _possibleConstructorReturn(this, (FontAwesome.__proto__ || Object.getPrototypeOf(FontAwesome)).call(this));
-
-    _this.displayName = 'FontAwesome';
-    return _this;
-  }
-
-  _createClass(FontAwesome, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          border = _props.border,
-          cssModule = _props.cssModule,
-          className = _props.className,
-          fixedWidth = _props.fixedWidth,
-          flip = _props.flip,
-          inverse = _props.inverse,
-          name = _props.name,
-          pulse = _props.pulse,
-          rotate = _props.rotate,
-          size = _props.size,
-          spin = _props.spin,
-          stack = _props.stack,
-          _props$tag = _props.tag,
-          tag = _props$tag === undefined ? 'span' : _props$tag,
-          ariaLabel = _props.ariaLabel,
-          props = _objectWithoutProperties(_props, ['border', 'cssModule', 'className', 'fixedWidth', 'flip', 'inverse', 'name', 'pulse', 'rotate', 'size', 'spin', 'stack', 'tag', 'ariaLabel']);
-
-      var classNames = [];
-
-      if (cssModule) {
-        classNames.push(cssModule['fa']);
-        classNames.push(cssModule['fa-' + name]);
-        size && classNames.push(cssModule['fa-' + size]);
-        spin && classNames.push(cssModule['fa-spin']);
-        pulse && classNames.push(cssModule['fa-pulse']);
-        border && classNames.push(cssModule['fa-border']);
-        fixedWidth && classNames.push(cssModule['fa-fw']);
-        inverse && classNames.push(cssModule['fa-inverse']);
-        flip && classNames.push(cssModule['fa-flip-' + flip]);
-        rotate && classNames.push(cssModule['fa-rotate-' + rotate]);
-        stack && classNames.push(cssModule['fa-stack-' + stack]);
-      } else {
-        classNames.push('fa');
-        classNames.push('fa-' + name);
-        size && classNames.push('fa-' + size);
-        spin && classNames.push('fa-spin');
-        pulse && classNames.push('fa-pulse');
-        border && classNames.push('fa-border');
-        fixedWidth && classNames.push('fa-fw');
-        inverse && classNames.push('fa-inverse');
-        flip && classNames.push('fa-flip-' + flip);
-        rotate && classNames.push('fa-rotate-' + rotate);
-        stack && classNames.push('fa-stack-' + stack);
-      }
-
-      // Add any custom class names at the end.
-      className && classNames.push(className);
-      return _react2.default.createElement(tag, _extends({}, props, { 'aria-hidden': true, className: classNames.join(' ') }), ariaLabel ? _react2.default.createElement('span', { style: _screenReaderStyles2.default }, ariaLabel) : null);
-    }
-  }]);
-
-  return FontAwesome;
-}(_react2.default.Component);
-
-FontAwesome.propTypes = {
-  ariaLabel: _propTypes2.default.string,
-  border: _propTypes2.default.bool,
-  className: _propTypes2.default.string,
-  cssModule: _propTypes2.default.object,
-  fixedWidth: _propTypes2.default.bool,
-  flip: _propTypes2.default.oneOf(['horizontal', 'vertical']),
-  inverse: _propTypes2.default.bool,
-  name: _propTypes2.default.string.isRequired,
-  pulse: _propTypes2.default.bool,
-  rotate: _propTypes2.default.oneOf([90, 180, 270]),
-  size: _propTypes2.default.oneOf(['lg', '2x', '3x', '4x', '5x']),
-  spin: _propTypes2.default.bool,
-  stack: _propTypes2.default.oneOf(['1x', '2x']),
-  tag: _propTypes2.default.string
-};
-
-exports.default = FontAwesome;
-module.exports = exports['default'];
-});
-
-var FontAwesome = unwrapExports(lib);
-
 var clone_1 = createCommonjsModule(function (module) {
 var clone = (function() {
 
@@ -1353,7 +1188,7 @@ if ('object' === 'object' && module.exports) {
 }
 });
 
-var css = ".PopupMenu_PopupMenu__8TfA4 {\n  position: relative; }\n\n.PopupMenu_button__20m_Y {\n  padding: 5px;\n  border-radius: 2px;\n  width: 30px;\n  height: 30px;\n  transition: background 0.25s ease-in-out; }\n  .PopupMenu_button__20m_Y:hover, .PopupMenu_button__20m_Y.active {\n    background: rgba(0, 0, 0, 0.1); }\n\n.PopupMenu_popover__3hd_Z {\n  background: white;\n  position: absolute;\n  width: calc(200px - 10px);\n  height: calc(200px - 10px);\n  left: calc(-100px + 50%);\n  top: 60px;\n  border-radius: 5px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n  transition: opacity 0.5s ease-in-out;\n  opacity: 0;\n  padding: 5px; }\n  .PopupMenu_popover__3hd_Z.active {\n    opacity: 1; }\n  .PopupMenu_popover__3hd_Z:hover + .PopupMenu_button__20m_Y {\n    background: rgba(0, 0, 0, 0.1); }\n  .PopupMenu_popover__3hd_Z:before {\n    content: \"\";\n    position: absolute;\n    display: block;\n    top: -20px;\n    left: calc(50% - 10px);\n    border: 10px solid white;\n    border-color: transparent transparent white transparent; }\n\n.PopupMenu_direction-top__1oqgB .PopupMenu_popover__3hd_Z {\n  top: auto;\n  bottom: 60px; }\n  .PopupMenu_direction-top__1oqgB .PopupMenu_popover__3hd_Z:before {\n    top: auto;\n    bottom: -20px;\n    border-color: white transparent transparent transparent; }\n\n.PopupMenu_direction-left__mSrJK .PopupMenu_popover__3hd_Z {\n  top: -100px;\n  left: auto !important;\n  right: 60px; }\n  .PopupMenu_direction-left__mSrJK .PopupMenu_popover__3hd_Z:before {\n    left: auto;\n    right: -20px;\n    top: calc(50% - 10px);\n    border-color: transparent transparent transparent white; }\n\n.PopupMenu_direction-right__yrXfz .PopupMenu_popover__3hd_Z {\n  top: -100px;\n  right: auto !important;\n  left: 60px !important; }\n  .PopupMenu_direction-right__yrXfz .PopupMenu_popover__3hd_Z:before {\n    right: auto;\n    left: -20px;\n    top: calc(50% - 10px);\n    border-color: transparent white transparent transparent; }\n";
+var css = ".PopupMenu_PopupMenu__8TfA4 {\n  position: relative; }\n\n.PopupMenu_button__20m_Y {\n  padding: 5px;\n  border-radius: 2px;\n  width: 30px;\n  height: 30px;\n  transition: background 0.25s ease-in-out; }\n  .PopupMenu_button__20m_Y:hover, .PopupMenu_button__20m_Y.active {\n    background: rgba(0, 0, 0, 0.1); }\n\n.PopupMenu_popover__3hd_Z {\n  background: white;\n  position: absolute;\n  width: calc(200px - 10px);\n  height: calc(200px - 10px);\n  left: calc(-100px + 50%);\n  top: 60px;\n  border-radius: 5px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n  transition: opacity 0.5s ease-in-out;\n  opacity: 0;\n  padding: 5px;\n  z-index: 1; }\n  .PopupMenu_popover__3hd_Z.active {\n    opacity: 1; }\n  .PopupMenu_popover__3hd_Z:hover + .PopupMenu_button__20m_Y {\n    background: rgba(0, 0, 0, 0.1); }\n  .PopupMenu_popover__3hd_Z:before {\n    content: \"\";\n    position: absolute;\n    display: block;\n    top: -20px;\n    left: calc(50% - 10px);\n    border: 10px solid white;\n    border-color: transparent transparent white transparent; }\n\n.PopupMenu_direction-top__1oqgB .PopupMenu_popover__3hd_Z {\n  top: auto;\n  bottom: 60px; }\n  .PopupMenu_direction-top__1oqgB .PopupMenu_popover__3hd_Z:before {\n    top: auto;\n    bottom: -20px;\n    border-color: white transparent transparent transparent; }\n\n.PopupMenu_direction-left__mSrJK .PopupMenu_popover__3hd_Z {\n  top: -100px;\n  left: auto !important;\n  right: 60px; }\n  .PopupMenu_direction-left__mSrJK .PopupMenu_popover__3hd_Z:before {\n    left: auto;\n    right: -20px;\n    top: calc(50% - 10px);\n    border-color: transparent transparent transparent white; }\n\n.PopupMenu_direction-right__yrXfz .PopupMenu_popover__3hd_Z {\n  top: -100px;\n  right: auto !important;\n  left: 60px !important; }\n  .PopupMenu_direction-right__yrXfz .PopupMenu_popover__3hd_Z:before {\n    right: auto;\n    left: -20px;\n    top: calc(50% - 10px);\n    border-color: transparent white transparent transparent; }\n";
 var style = { "PopupMenu": "PopupMenu_PopupMenu__8TfA4", "button": "PopupMenu_button__20m_Y", "popover": "PopupMenu_popover__3hd_Z", "direction-top": "PopupMenu_direction-top__1oqgB", "direction-left": "PopupMenu_direction-left__mSrJK", "direction-right": "PopupMenu_direction-right__yrXfz" };
 __$$styleInject(css);
 
@@ -1478,14 +1313,13 @@ var PopupMenu = function (_Component) {
 
 
       var styles = this.configureStyles(this.props);
-      console.log(style);
 
-      return require$$0__default.createElement(
+      return react__default.createElement(
         'div',
         {
           className: classnames(style.PopupMenu, style['direction-' + direction])
         },
-        require$$0__default.createElement(
+        react__default.createElement(
           'div',
           {
             onMouseOver: this.hover,
@@ -1494,9 +1328,9 @@ var PopupMenu = function (_Component) {
               active: hovered
             })
           },
-          require$$0__default.createElement(FontAwesome, { name: 'rocket', size: '2x' })
+          this.props.button
         ),
-        require$$0__default.createElement(
+        react__default.createElement(
           'div',
           {
             onMouseOver: this.hover,
@@ -1515,7 +1349,7 @@ var PopupMenu = function (_Component) {
     }
   }]);
   return PopupMenu;
-}(require$$0.Component);
+}(react.Component);
 PopupMenu.defaultProps = {
   width: 200,
   height: 'auto'
@@ -1978,7 +1812,7 @@ var reactDom_development = createCommonjsModule(function (module) {
 {
   (function() {
 
-var React = require$$0__default;
+var React = react__default;
 var invariant = invariant_1;
 var warning = warning_1;
 var ExecutionEnvironment = ExecutionEnvironment_1;
@@ -17444,7 +17278,7 @@ var element_1 = element.getRenderedElement;
 var element_2 = element.getNewContainer;
 var element_3 = element.getMainContainer;
 
-var lib$1 = createCommonjsModule(function (module, exports) {
+var lib = createCommonjsModule(function (module, exports) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -17535,10 +17369,10 @@ var getRenderedWidth = exports.getRenderedWidth = function getRenderedWidth() {
 exports.default = getRenderedSize;
 });
 
-var getRenderedSize = unwrapExports(lib$1);
-var lib_1 = lib$1.getRenderedWidth;
-var lib_2 = lib$1.getRenderedHeight;
-var lib_3 = lib$1.getRenderedSize;
+var getRenderedSize = unwrapExports(lib);
+var lib_1 = lib.getRenderedWidth;
+var lib_2 = lib.getRenderedHeight;
+var lib_3 = lib.getRenderedSize;
 
 var css$1 = ".PopupTable_PopupTable__3fGcX {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: calc(200px - 10px);\n  flex-flow: row wrap; }\n\n.PopupTable_item__1j75h {\n  padding: 5px;\n  border-radius: 2px;\n  transition: background 0.15s ease-in-out; }\n  .PopupTable_item__1j75h:hover {\n    background: rgba(0, 0, 0, 0.1); }\n\n.PopupTable_placeholder__CKltF {\n  height: 10px;\n  display: block;\n  border-radius: 2px;\n  visibility: hidden; }\n";
 var style$1 = { "PopupTable": "PopupTable_PopupTable__3fGcX", "item": "PopupTable_item__1j75h", "placeholder": "PopupTable_placeholder__CKltF" };
@@ -19789,7 +19623,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 
 
-var _react2 = _interopRequireDefault(require$$0__default);
+var _react2 = _interopRequireDefault(react__default);
 
 
 
@@ -19857,12 +19691,12 @@ var ReferenceWrapper = function (_Component) {
   _createClass(ReferenceWrapper, [{
     key: 'render',
     value: function render() {
-      return require$$0__default.Children.only(this.props.children);
+      return react__default.Children.only(this.props.children);
     }
   }]);
 
   return ReferenceWrapper;
-}(require$$0__default.Component);
+}(react__default.Component);
 
 ReferenceWrapper.displayName = 'SizeMeReferenceWrapper';
 
@@ -20209,7 +20043,7 @@ var PopupTable = function (_Component) {
 
       var children = this.props.children.map(function (component) {
         sizes.push(getRenderedSize(component));
-        return require$$0__default.cloneElement(component);
+        return react__default.cloneElement(component);
       });
 
       var items = children.length % rowItems;
@@ -20223,21 +20057,21 @@ var PopupTable = function (_Component) {
 
         var margin = (width - rowItems * (contentSize / items)) / rowItems;
 
-        children.push(require$$0__default.createElement('div', {
+        children.push(react__default.createElement('div', {
           style: {
             width: width - contentSize - margin * rowItems
           }
         }));
       }
 
-      return require$$0__default.createElement(
+      return react__default.createElement(
         'div',
         {
           className: style$1.PopupTable,
           style: { width: 'calc(' + width + 'px - 10px)' }
         },
         children.map(function (child, i) {
-          return require$$0__default.createElement(
+          return react__default.createElement(
             'div',
             { className: i == children.length - 1 && items > 0 ? style$1.placeholder : style$1.item },
             child
@@ -20247,13 +20081,39 @@ var PopupTable = function (_Component) {
     }
   }]);
   return PopupTable;
-}(require$$0.Component);
+}(react.Component);
 PopupTable.contextTypes = {
   popupWidth: propTypes.number
 };
 
+var PopupText = function (_Component) {
+  inherits(PopupText, _Component);
+
+  function PopupText() {
+    classCallCheck(this, PopupText);
+    return possibleConstructorReturn(this, (PopupText.__proto__ || Object.getPrototypeOf(PopupText)).apply(this, arguments));
+  }
+
+  createClass(PopupText, [{
+    key: 'render',
+    value: function render() {
+      return react__default.createElement(
+        'div',
+        { style: { padding: '3px 7px' } },
+        react__default.createElement(
+          'span',
+          null,
+          this.props.children
+        )
+      );
+    }
+  }]);
+  return PopupText;
+}(react.Component);
+
 exports.PopupMenu = PopupMenu;
 exports.PopupTable = PopupTable;
+exports.PopupText = PopupText;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
