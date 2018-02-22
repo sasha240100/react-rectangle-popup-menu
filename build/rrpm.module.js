@@ -1617,6 +1617,9 @@ var PopupTable = function (_Component) {
   }]);
   return PopupTable;
 }(Component);
+PopupTable.defaultProps = {
+  rowItems: 1
+};
 PopupTable.contextTypes = {
   popupWidth: propTypes.number
 };

@@ -9,23 +9,23 @@ const button = (<FontAwesome name="rocket" size="2x" />);
 
 const Application = () => (
   <div className="centered">
-  <PopupMenu width={190} direction="bottom" button={button}>
-    <PopupTable rowItems={4}>
-      <FontAwesome name="google-plus-square" size="2x" />
-      <FontAwesome name="twitter-square" size="2x" />
-      <FontAwesome name="google" size="2x" />
-      <FontAwesome name="google" size="2x" />
+    <PopupMenu width={190} direction="bottom" button={button}>
+      <PopupTable rowItems={4}>
+        <FontAwesome name="google-plus-square" size="2x" />
+        <FontAwesome name="twitter-square" size="2x" />
+        <FontAwesome name="google" size="2x" />
+        <FontAwesome name="google" size="2x" />
 
-      <FontAwesome name="facebook-official" size="2x" />
-      <FontAwesome name="twitter-square" size="2x" />
-      <FontAwesome name="spotify" size="2x" />
-      <FontAwesome name="twitter-square" size="2x" />
+        <FontAwesome name="facebook-official" size="2x" />
+        <FontAwesome name="twitter-square" size="2x" />
+        <FontAwesome name="spotify" size="2x" />
+        <FontAwesome name="twitter-square" size="2x" />
 
-      <FontAwesome name="google-plus-square" size="2x" />
-      <FontAwesome name="google" size="2x" />
-      <FontAwesome name="twitter-square" size="2x" />
-    </PopupTable>
-  </PopupMenu>
+        <FontAwesome name="google-plus-square" size="2x" />
+        <FontAwesome name="google" size="2x" />
+        <FontAwesome name="twitter-square" size="2x" />
+      </PopupTable>
+    </PopupMenu>
   </div>
 );
 
