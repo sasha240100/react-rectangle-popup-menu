@@ -1,0 +1,91 @@
+.PopupMenu {
+  position: relative;
+}
+
+.button {
+  padding: 5px;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  transition: background 0.25s ease-in-out;
+
+  &:hover, &:global(.active) {
+    background: rgba(0,0,0,0.1);
+  }
+}
+
+.popover {
+  background: white;
+  position: absolute;
+  width: calc(200px - 10px);
+  height: calc(200px - 10px);
+  left: calc(-100px + 50%);
+  top: 60px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  padding: 5px;
+  z-index: 1;
+
+  &:global(.active) {
+    opacity: 1;
+  }
+
+  &:hover + .button {
+    background: rgba(0,0,0,0.1);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -20px;
+    left: calc(50% - 10px);
+    border: 10px solid white;
+    border-color: transparent transparent white transparent;
+  }
+}
+
+.direction-top {
+  .popover {
+    top: auto;
+    bottom: 60px;
+
+    &:before {
+      top: auto;
+      bottom: -20px;
+      border-color: white transparent transparent transparent;
+    }
+  }
+}
+
+.direction-left {
+  .popover {
+    top: -100px;
+    left: auto !important;
+    right: 60px;
+
+    &:before {
+      left: auto;
+      right: -20px;
+      top: calc(50% - 10px);
+      border-color: transparent transparent transparent white;
+    }
+  }
+}
+
+.direction-right {
+  .popover {
+    top: -100px;
+    right: auto !important;
+    left: 60px !important;
+
+    &:before {
+      right: auto;
+      left: -20px;
+      top: calc(50% - 10px);
+      border-color: transparent white transparent transparent;
+    }
+  }
+}
