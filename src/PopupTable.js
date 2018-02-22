@@ -79,8 +79,6 @@ export class PopupTable extends Component {
       );
     }
 
-    console.log(items);
-
     return (
       <div
         className={style.PopupTable}

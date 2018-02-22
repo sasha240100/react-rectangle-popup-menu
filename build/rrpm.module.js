@@ -1430,8 +1430,6 @@ var PopupTable = function (_Component) {
         }));
       }
 
-      console.log(items);
-
       return React.createElement(
         'div',
         {
