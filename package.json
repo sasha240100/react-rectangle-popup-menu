@@ -5,7 +5,6 @@
   "main": "build/rrpm.js",
   "module": "build/rrpm.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.babel.js",
     "watch": "rollup -c rollup.config.babel.js -w",
     "examples:build": "cd \"./examples\" && \"./node_modules/.bin/webpack\"",
